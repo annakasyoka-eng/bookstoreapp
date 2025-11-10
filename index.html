@@ -4,16 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BookShelf | Home</title>
- 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
 
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styling/index.css">
 
 </head>
 <body>
 
   <header>
-    <h1>BookShelf</h1>
+    <h1 class="logo">📚 BookShelf</h1>
     <nav>
       <a href="#">Home</a>
       <a href="#">Categories</a>
@@ -23,16 +22,37 @@
   </header>
 
   <section class="hero">
-    <h2>Discover, Learn, and Escape into the World of Books</h2>
-    <button>Explore Categories</button>
+    <div class="hero-content">
+      <h2 class="fade-in">Discover, Learn, and Escape into the World of Books</h2>
+      <p class="fade-in-delay">Your gateway to stories, knowledge, and imagination.</p>
+      <button class="explore-btn slide-up">Explore Categories</button>
+    </div>
   </section>
 
   <section class="categories">
-    <div class="category"><h3>Fiction</h3><p>Stories that spark imagination.</p></div>
-    <div class="category"><h3>Non-Fiction</h3><p>Truths that inspire and teach.</p></div>
-    <div class="category"><h3>Children & Young Adults</h3><p>Adventures for growing minds.</p></div>
-    <div class="category"><h3>Education & Academic</h3><p>Learn from the world around you.</p></div>
-    <div class="category"><h3>Lifestyle & Hobbies</h3><p>Ideas that shape how you live.</p></div>
+    <h2 class="section-title">Browse by Category</h2>
+    <div class="category-grid">
+      <div class="category">
+        <h3>Fiction</h3>
+        <p>Stories that spark imagination.</p>
+      </div>
+      <div class="category">
+        <h3>Non-Fiction</h3>
+        <p>Truths that inspire and teach.</p>
+      </div>
+      <div class="category">
+        <h3>Children & Young Adults</h3>
+        <p>Adventures for growing minds.</p>
+      </div>
+      <div class="category">
+        <h3>Education & Academic</h3>
+        <p>Learn from the world around you.</p>
+      </div>
+      <div class="category">
+        <h3>Lifestyle & Hobbies</h3>
+        <p>Ideas that shape how you live.</p>
+      </div>
+    </div>
   </section>
 
   <section class="featured">
@@ -47,5 +67,16 @@
   <footer>
     BookShelf | Built with ❤️ by Anna & Kelvin
   </footer>
+
+  <script>
+    // Simple scroll fade effect
+    const revealElements = document.querySelectorAll('.category, .section-title, .featured, .quote');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.2 });
+    revealElements.forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>

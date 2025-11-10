@@ -1,84 +1,288 @@
- body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: #d77858;
-      color: #333;
-    }
-    header {
-      background-color: #fff;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 40px;
-    }
-    header h1 {
-      font-family: 'Playfair Display', serif;
-      color: #222;
-    }
-    nav a {
-      margin: 0 10px;
-      text-decoration: underline;
-      color: #444;
-      font-weight: 500;
-    }
-    nav a:hover {
-      color: #ff7f50;
-      transform: scale(1.1);
-    }
-    .hero {
-      background-size: cover;
-      background-position: center;
-      background-image: url(../assets/books.jpg);
-      height: 95%;
-      color: white;
-      text-align: center;
-      padding: 120px 20px;
-    }
-    .hero h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-    }
-    .hero button {
-      color: #ff7f50;
-      border: none;
-      background-color: white;
-      padding: 12px 25px;
-      font-size: 1rem;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-top: 15px;
-    }
-    .categories {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 20px;
-      padding: 50px 30px;
-      text-align: center;
-    }
-    .category {
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      padding: 20px;
-    }
-    .category h3 {
-      font-family: 'Playfair Display', serif;
-    }
-    .featured {
-      text-align: center;
-      padding: 50px 20px;
-    }
-    .quote {
-      background-color: #fff0e6;
-      padding: 40px 20px;
-      text-align: center;
-      font-style: italic;
-    }
-    footer {
-      background-color: #222;
-      color: #ccc;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-    }
+/* ==============================
+   GLOBAL
+============================== */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fdf6f2;
+  color: #333;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* ==============================
+   HEADER
+============================== */
+header {
+  background-color: #fff;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 60px;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  animation: slideDown 0.8s ease;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  color: #222;
+  font-size: 1.9rem;
+  letter-spacing: 1px;
+}
+
+nav a {
+  margin: 0 16px;
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #d77858;
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: #d77858;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ==============================
+   HERO
+============================== */
+.hero {
+  position: relative;
+  background-image: url('../assets/books.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.25));
+  z-index: 1;
+  animation: heroFade 1.5s ease;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  padding: 20px;
+}
+
+.hero h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  color: #eee;
+  animation: fadeIn 1.5s ease;
+}
+
+.explore-btn {
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+  font-weight: 600;
+  padding: 14px 34px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.explore-btn:hover {
+  background-color: #d77858;
+  border-color: #d77858;
+  transform: translateY(-3px);
+}
+
+/* ==============================
+   CATEGORIES
+============================== */
+.categories {
+  padding: 80px 50px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  color: #3b2e1b;
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+}
+
+.category {
+  background-color: #fffaf7;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 35px 20px;
+  transition: all 0.4s ease;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.category:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.category h3 {
+  font-family: 'Playfair Display', serif;
+  color: #d77858;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+}
+
+.category p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* ==============================
+   FEATURED
+============================== */
+.featured {
+  text-align: center;
+  padding: 80px 20px;
+  background-color: #fdf1ec;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.featured h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #3b2e1b;
+  margin-bottom: 15px;
+}
+
+/* ==============================
+   QUOTE
+============================== */
+.quote {
+  background: linear-gradient(45deg, #d77858, #b25b3f);
+  color: white;
+  padding: 70px 20px;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-style: italic;
+  line-height: 1.7;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+/* ==============================
+   FOOTER
+============================== */
+footer {
+  background-color: #222;
+  color: #ccc;
+  text-align: center;
+  padding: 25px;
+  font-size: 0.9rem;
+}
+
+/* ==============================
+   ANIMATIONS   you can ignore this part because these are animations,, 
+============================== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-60px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes heroFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* ==============================
+   RESPONSIVE DESIGN
+============================== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 15px 25px;
+  }
+
+  nav {
+    margin-top: 8px;
+  }
+
+  .hero h2 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .categories {
+    padding: 60px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero {
+    height: 70vh;
+  }
+
+  .quote {
+    font-size: 1.1rem;
+  }
+}
