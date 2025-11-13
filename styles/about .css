@@ -2,7 +2,7 @@
    Reset & base(USED TO SET THE  GLOBAL STYLES)
    ============================ */
 :root{
-  --bg: #fffdfb;
+  --bg: hsl(30, 100%, 99%);
   --accent: #d77858;
   --accent-2: #ffb47f;
   --muted: #6b6b6b;
