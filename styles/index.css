@@ -33,8 +33,10 @@ header {
   letter-spacing: 1px;
 }
 
-nav a {
-  margin: 0 16px;
+.main-nav a {
+  margin-left: 1.5rem;
+  font-weight: 500;
+  color: var(--color-muted);
   text-decoration: none;
   color: #444;
   font-weight: 500;
@@ -42,7 +44,7 @@ nav a {
   transition: all 0.3s ease;
 }
 
-nav a::after {
+.main-nav a::after {
   content: "";
   position: absolute;
   bottom: -6px;
@@ -53,11 +55,11 @@ nav a::after {
   transition: width 0.3s ease;
 }
 
-nav a:hover {
+.main-nav a:hover {
   color: #d77858;
 }
 
-nav a:hover::after {
+.main-nav a:hover::after {
   width: 100%;
 }
 
