@@ -7,69 +7,68 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/index.css">
-
 </head>
 <body>
+  <!-- HEADER -->
+  <header>
+    <h1 class="logo">📚 BookShelf</h1>
 
-<header class="site-header">
-  <div class="container header-grid">
-    <div class="brand">
-      <a href="index.html" aria-label="BookShelf Home" class="logo">📚 <span>BookShelf</span></a>
-    </div>
-    <nav class="main-nav" aria-label="Primary navigation">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="shop.html" class="nav-link">Shop</a>
-        <a href="categories.html" class="nav-link">Categories</a>
-        <a href="about.html" class="nav-link active">About</a>
-        <a href="contact.html" class="nav-link btn-outline">Contact</a>
+    <form action="#" class="search-bar">
+        <input type="text" placeholder="Search books, authors, genres..." />
+        <button type="submit">Search</button>
+    </form>
+    
+    
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="categories.html">Categories</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="btn-outline">Contact</a>
     </nav>
-  </div>
-</header>
+    
+  </header>
 
-
+  <!-- HERO SECTION -->
   <section class="hero">
     <div class="hero-content">
       <h2 class="fade-in">Discover, Learn, and Escape into the World of Books</h2>
       <p class="fade-in-delay">Your gateway to stories, knowledge, and imagination.</p>
-      <button class="explore-btn slide-up">Explore Categories</button>
+      <button class="explore-btn slide-up" onclick="location.href='categories.html'">Explore Categories</button>
     </div>
   </section>
 
+  <!-- FEATURED BOOKS -->
   <section class="categories">
-    <h2 class="section-title">Browse by Category</h2>
+    <h2 class="section-title">Featured Books</h2>
     <div class="category-grid">
       <div class="category">
-        <h3>Fiction</h3>
-        <p>Stories that spark imagination.</p>
+        <img src="assets/nightcircus.jpg" alt="The Night Circus" style="width:100%; border-radius: 8px; margin-bottom: 12px;">
+        <h3>The Night Circus</h3>
+        <p>By Erin Morgenstern — A magical love story set in a mysterious circus that appears without warning.</p>
       </div>
+
       <div class="category">
-        <h3>Non-Fiction</h3>
-        <p>Truths that inspire and teach.</p>
+        <img src="assets/atomic-habits.jpg" alt="Atomic Habits" style="width:100%; border-radius: 8px; margin-bottom: 12px;">
+        <h3>Atomic Habits</h3>
+        <p>By James Clear — Practical guide on how small habits lead to big life changes.</p>
       </div>
+
       <div class="category">
-        <h3>Children & Young Adults</h3>
-        <p>Adventures for growing minds.</p>
+        <img src="assets/harrypotter.jpg" alt="Harry Potter and the Sorcerer’s Stone" style="width:100%; border-radius: 8px; margin-bottom: 12px;">
+        <h3>Harry Potter and the Sorcerer’s Stone</h3>
+        <p>By J.K. Rowling — The start of an epic magical adventure at Hogwarts.</p>
       </div>
+
       <div class="category">
-        <h3>Education & Academic</h3>
-        <p>Learn from the world around you.</p>
-      </div>
-      <div class="category">
-        <h3>Lifestyle & Hobbies</h3>
-        <p>Ideas that shape how you live.</p>
+        <img src="assets/ikigai.jpg" alt="Ikigai" style="width:100%; border-radius: 8px; margin-bottom: 12px;">
+        <h3>Ikigai</h3>
+        <p>By Héctor García & Francesc Miralles — Discover your “reason for being” and live a fulfilling life.</p>
       </div>
     </div>
   </section>
 
-  <section class="featured">
-      <h2>Featured Books</h2>
-    <p>Our top picks this week. Explore something new!</p>
-  </section>
-
-  <section class="quote">
-    “A reader lives a thousand lives before they die.” — George R.R. Martin
-  </section>
-
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand">
@@ -96,16 +95,18 @@
     </div>
   </footer>
 
-
   <script>
-    // Simple scroll fade effect
+    // Optional scroll fade effect for cards
     const revealElements = document.querySelectorAll('.category, .section-title, .featured, .quote');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
+    window.addEventListener('scroll', () => {
+      revealElements.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if(top < windowHeight - 100) {
+          el.classList.add('visible');
+        }
       });
-    }, { threshold: 0.2 });
-    revealElements.forEach(el => observer.observe(el));
+    });
   </script>
 </body>
 </html>

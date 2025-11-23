@@ -1,91 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>About Us — BookShelf Boutique</title>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-  <!-- Main CSS -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookShelf | Categories</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/categories.css">
 </head>
 <body>
-  
-<header class="site-header">
-  <div class="container header-grid">
-    <div class="brand">
-      <a href="index.html" aria-label="BookShelf Home" class="logo">📚 <span>BookShelf</span></a>
-    </div>
-    <nav class="main-nav" aria-label="Primary navigation">
-      <ul class="nav-list">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="shop.html" class="nav-link">Shop</a>
-        <a href="categories.html" class="nav-link">Categories</a>
-        <a href="about.html" class="nav-link active">About</a>
-        <a href="contact.html" class="nav-link btn-outline">Contact</a>
+  <!-- HEADER -->
+  <header>
+    <h1 class="logo">📚 BookShelf</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="categories.html">Categories</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="btn-outline">Contact</a>
     </nav>
-  </div>
-</header>
+  </header>
 
-  <main>
-    <!-- Hero Section -->
-    <section class="categories-hero">
-      <div class="container">
-        <h1>Book Categories</h1>
-        <p>Explore our diverse range of book categories to find your next great read.</p>
-      </div>
-    </section>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2 class="fade-in">Browse Books by Category</h2>
+      <p class="fade-in-delay">Find your next favorite read</p>
+    </div>
+  </section>
 
-    <!-- Categories List -->
-    <section class="categories-list container">
-      <article class="category-item">
-        <h2>📖 Fiction</h2>
-        <ul>
-          <li>
-            <strong>The Night Circus</strong> – Erin Morgenstern: A magical love story set in a mysterious circus.
-          </li>
-          <li>
-            <strong>Where the Crawdads Sing</strong> – Delia Owens: Mystery and coming-of-age in North Carolina marshlands.
-          </li>
-          <li>
-            <strong>The Alchemist</strong> – Paulo Coelho: A timeless journey about following your dreams.
-          </li>
-        </ul>
+  <!-- CATEGORY SECTIONS -->
+  <section class="categories">
 
-        <h2>📚 Non-Fiction</h2>
-        <ul>
-          <li><strong>Atomic Habits</strong> – James Clear: Small habits leading to big life changes.</li>
-          <li><strong>Becoming</strong> – Michelle Obama: Memoir of the former First Lady’s life journey.</li>
-          <li><strong>The Subtle Art of Not Giving a F*ck</strong> – Mark Manson: Finding meaning by caring about what matters.</li>
-        </ul>
+    <!-- FICTION -->
+    <h2 class="section-title">Fiction</h2>
+    <div class="category-grid">
+      <div class="category"><img src="assets/library.jpg" alt="Book 1"><h3>The Midnight Library</h3><p>By Matt Haig</p></div>
+      <div class="category"><img src="assets/Where-the-Crawdads-Sing.jpg" alt="Book 2"><h3>Where the Crawdads Sing</h3><p>By Delia Owens</p></div>
+      <div class="category"><img src="assets/normal-people.jpg" alt="Book 3"><h3>Normal People</h3><p>By Sally Rooney</p></div>
+      <div class="category"><img src="assets/the-great-gabsy.jpg" alt="Book 4"><h3>The Great Gatsby</h3><p>By F. Scott Fitzgerald</p></div>
+      <div class="category"><img src="assets/little-fires-everywhere.jpg" alt="Book 5"><h3>Little Fires Everywhere</h3><p>By Celeste Ng</p></div>
+      <div class="category"><img src="assets/circles.jpg" alt="Book 6"><h3>Circe</h3><p>By Madeline Miller</p></div>
+    </div>
 
-        <h2>🧒 Children & Young Adults</h2>
-        <ul>
-          <li><strong>Harry Potter and the Sorcerer’s Stone</strong> – J.K. Rowling: Harry discovers he’s a wizard at Hogwarts.</li>
-          <li><strong>Wonder</strong> – R.J. Palacio: A story about acceptance and kindness.</li>
-          <li><strong>Percy Jackson: The Lightning Thief</strong> – Rick Riordan: Greek mythology meets modern adventure.</li>
-        </ul>
+    <!-- NON-FICTION -->
+    <h2 class="section-title">Non-Fiction</h2>
+    <div class="category-grid">
+      <div class="category"><img src="assets/atomic-habits.jpg" alt="Book 7"><h3>Atomic Habits</h3><p>By James Clear</p></div>
+      <div class="category"><img src="assets/ikigai.jpg" alt="Book 8"><h3>Ikigai</h3><p>By Héctor García & Francesc Miralles</p></div>
+      <div class="category"><img src="assets/sapiens.jpg" alt="Book 9"><h3>Sapiens</h3><p>By Yuval Noah Harari</p></div>
+      <div class="category"><img src="assets/educated.jpg" alt="Book 10"><h3>Educated</h3><p>By Tara Westover</p></div>
+      <div class="category"><img src="assets/becoming.jpg" alt="Book 11"><h3>Becoming</h3><p>By Michelle Obama</p></div>
+      <div class="category"><img src="assets/the-body.jpg" alt="Book 12"><h3>The Body</h3><p>By Bill Bryson</p></div>
+    </div>
 
-        <h2>🎓 Education & Academic</h2>
-        <ul>
-          <li><strong>A Brief History of Time</strong> – Stephen Hawking: Exploring time, black holes, and the universe.</li>
-          <li><strong>Thinking, Fast and Slow</strong> – Daniel Kahneman: How we think and make decisions.</li>
-          <li><strong>The Elements of Style</strong> – Strunk Jr. & E.B. White: Classic guide to effective writing.</li>
-        </ul>
+    <!-- CHILDREN & YOUNG ADULTS -->
+    <h2 class="section-title">Children & Young Adults</h2>
+    <div class="category-grid">
+      <div class="category"><img src="assets/harrypotter.jpg" alt="Book 13"><h3>Harry Potter and the Sorcerer’s Stone</h3><p>By J.K. Rowling</p></div>
+      <div class="category"><img src="assets/hunger.jpg" alt="Book 14"><h3>The Hunger Games</h3><p>By Suzanne Collins</p></div>
+      <div class="category"><img src="assets/jacky.jpg" alt="Book 15"><h3>Percy Jackson & the Olympians</h3><p>By Rick Riordan</p></div>
+      <div class="category"><img src="assets/narnia.jpg" alt="Book 16"><h3>The Chronicles of Narnia</h3><p>By C.S. Lewis</p></div>
+      <div class="category"><img src="assets/anne.jpg" alt="Book 17"><h3>Anne of Green Gables</h3><p>By L.M. Montgomery</p></div>
+      <div class="category"><img src="assets/matilda.jpg" alt="Book 18"><h3>Matilda</h3><p>By Roald Dahl</p></div>
+    </div>
 
-        <h2>🌿 Lifestyle & Hobbies</h2>
-        <ul>
-          <li><strong>Ikigai</strong> – Héctor García & Francesc Miralles: Discovering your reason for being.</li>
-          <li><strong>The Life-Changing Magic of Tidying Up</strong> – Marie Kondo: Minimalist guide to decluttering.</li>
-          <li><strong>Eat, Pray, Love</strong> – Elizabeth Gilbert: Self-discovery through travel and spirituality.</li>
-        </ul>
-      </article>
-    </section>
-  </main>
+    <!-- EDUCATION & ACADEMIC -->
+    <h2 class="section-title">Education & Academic</h2>
+    <div class="category-grid">
+      <div class="category"><img src="assets/biochem.jpg" alt="Book 19"><h3>Introduction to Biochemistry</h3><p>By Carol Higginbotham</p></div>
+      <div class="category"><img src="assets/physics.jpg" alt="Book 20"><h3>Physics Essentials</h3><p>By Cassian Rook</p></div>
+      <div class="category"><img src="assets/calculus.jpg" alt="Book 21"><h3>Calculus Made Easy</h3><p>By Silvanus P. Thompson</p></div>
+      <div class="category"><img src="assets/chem.jpg" alt="Book 22"><h3>Organic Chemistry Basics</h3><p>By Ananya Ganguly</p></div>
+      <div class="category"><img src="assets/anatomy.jpg" alt="Book 23"><h3>Human Anatomy</h3><p>By Selwyn Ardent</p></div>
+      <div class="category"><img src="assets/bio.jpg" alt="Book 24"><h3>Biology 101</h3><p>By Liora Duvall</p></div>
+    </div>
 
-  <!-- Footer -->
+    <!-- LIFESTYLE & HOBBIES -->
+    <h2 class="section-title">Lifestyle & Hobbies</h2>
+    <div class="category-grid">
+      <div class="category"><img src="assets/baking.jpg" alt="Book 25"><h3>The Art of Baking</h3><p>By Caelen Frost</p></div>
+      <div class="category"><img src="assets/sketching.jpg" alt="Book 26"><h3>Sketching for Beginners</h3><p>By Peter Cronin</p></div>
+      <div class="category"><img src="assets/photo.jpg" alt="Book 27"><h3>Photography 101</h3><p>By David Thompson</p></div>
+      <div class="category"><img src="assets/gardening.jpg" alt="Book 28"><h3>Gardening Basics</h3><p>By Carmen Ellis</p></div>
+      <div class="category"><img src="assets/decor.jpg" alt="Book 29"><h3>Home Decor Tips</h3><p>By Emma Blomfield</p></div>
+      <div class="category"><img src="assets/fitness.jpg" alt="Book 30"><h3>Fitness & Wellness</h3><p>By Ellen M. Evans</p></div>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand">
@@ -93,7 +96,7 @@
         <p class="muted">Trusted bookseller • Secure checkout • Fast shipping</p>
       </div>
 
-      <nav class="footer-nav" aria-label="Footer navigation">
+      <nav class="footer-nav" aria-label="Footer">
         <a href="shop.html">Shop</a>
         <a href="returns.html">Returns</a>
         <a href="privacy.html">Privacy</a>
@@ -105,12 +108,24 @@
         <div class="badge">Verified</div>
         <div class="badge">Support</div>
       </div>
+    </div>
 
-      <div class="copyright">
-        <p>© 2025 BookShelf Boutique • Built with ❤️ by Anna & Kelvin</p>
-      </div>
+    <div class="copyright">
+      <div class="container">© 2025 BookShelf Boutique • Built with ❤️ by Anna & Kelvin</div>
     </div>
   </footer>
 
+  <script>
+    const revealElements = document.querySelectorAll('.category, .section-title, .featured, .quote');
+    window.addEventListener('scroll', () => {
+      revealElements.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if(top < windowHeight - 100) {
+          el.classList.add('visible');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
