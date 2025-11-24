@@ -1,92 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>BookShelf | Categories</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/categories.css">
 </head>
 <body>
-  <!-- HEADER -->
-  <header>
-    <h1 class="logo">📚 BookShelf</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="shop.html">Shop</a>
-      <a href="categories.html">Categories</a>
-      <a href="about.html">About</a>
-      <a href="contact.html" class="btn-outline">Contact</a>
-    </nav>
+  <!-- SKIP LINK FOR ACCESSIBILITY -->
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- HEADER (glass + sticky) -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner container">
+      <div class="brand">
+        <a href="index.html" class="logo" aria-label="BookShelf home">📚 <span>BookShelf</span></a>
+        <button id="theme-toggle" class="theme-toggle" aria-pressed="false" aria-label="Toggle dark mode">🌙</button>
+      </div>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="categories.html" class="active">Categories</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="btn-outline">Contact</a>
+      </nav>
+
+      <button id="mobile-menu-btn" class="mobile-menu-btn" aria-expanded="false" aria-label="Toggle menu">
+        ☰
+      </button>
+    </div>
   </header>
 
   <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content">
-      <h2 class="fade-in">Browse Books by Category</h2>
-      <p class="fade-in-delay">Find your next favorite read</p>
+  <section class="hero" role="region" aria-label="Browse books hero">
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <h1>Browse Books by Category</h1>
+        <p class="lead">Find your next favorite read — curated collections, top sellers and new arrivals.</p>
+      </div>
+
+      <!-- SEARCH & FILTERS -->
+      <div class="controls" role="search" aria-label="Search and filters">
+        <input id="search-input" type="search" placeholder="Search books, authors, titles..." aria-label="Search books">
+        
+        <div class="selects">
+          <select id="filter-select" aria-label="Filter by category">
+            <option value="all">All Categories</option>
+            <option value="Fiction">Fiction</option>
+            <option value="Non-Fiction">Non-Fiction</option>
+            <option value="Children">Children & Young Adults</option>
+            <option value="Education">Education & Academic</option>
+            <option value="Lifestyle">Lifestyle & Hobbies</option>
+          </select>
+
+          <select id="sort-select" aria-label="Sort books">
+            <option value="default">Sort: Featured</option>
+            <option value="title-asc">Title A → Z</option>
+            <option value="title-desc">Title Z → A</option>
+            <option value="author-asc">Author A → Z</option>
+            <option value="author-desc">Author Z → A</option>
+          </select>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- CATEGORY SECTIONS -->
-  <section class="categories">
+  <!-- QUICK NAV (sidebar) -->
+  <aside class="quick-nav" aria-label="Quick navigation">
+    <nav>
+      <ul>
+        <li><a href="#fiction">Fiction</a></li>
+        <li><a href="#nonfiction">Non-Fiction</a></li>
+        <li><a href="#children">Children & Young Adults</a></li>
+        <li><a href="#education">Education & Academic</a></li>
+        <li><a href="#lifestyle">Lifestyle & Hobbies</a></li>
+      </ul>
+    </nav>
+  </aside>
 
+  <!-- MAIN CONTENT -->
+  <main id="main" class="container main-content">
     <!-- FICTION -->
-    <h2 class="section-title">Fiction</h2>
-    <div class="category-grid">
-      <div class="category"><img src="assets/library.jpg" alt="Book 1"><h3>The Midnight Library</h3><p>By Matt Haig</p></div>
-      <div class="category"><img src="assets/Where-the-Crawdads-Sing.jpg" alt="Book 2"><h3>Where the Crawdads Sing</h3><p>By Delia Owens</p></div>
-      <div class="category"><img src="assets/normal-people.jpg" alt="Book 3"><h3>Normal People</h3><p>By Sally Rooney</p></div>
-      <div class="category"><img src="assets/the-great-gabsy.jpg" alt="Book 4"><h3>The Great Gatsby</h3><p>By F. Scott Fitzgerald</p></div>
-      <div class="category"><img src="assets/little-fires-everywhere.jpg" alt="Book 5"><h3>Little Fires Everywhere</h3><p>By Celeste Ng</p></div>
-      <div class="category"><img src="assets/circles.jpg" alt="Book 6"><h3>Circe</h3><p>By Madeline Miller</p></div>
-    </div>
+    <section id="fiction" class="category-section" data-category="Fiction">
+      <div class="section-header">
+        <h2 class="section-title">Fiction</h2>
+        <div class="section-desc">Heartfelt stories, modern classics and contemporary fiction picks.</div>
+      </div>
+
+      <div class="category-grid" role="list">
+        <article class="category" data-title="The Midnight Library" data-author="Matt Haig" data-cat="Fiction" role="listitem" tabindex="0">
+          <img src="assets/library.jpg" alt="The Midnight Library cover">
+          <div class="card-body">
+            <h3>The Midnight Library</h3>
+            <p class="byline">By Matt Haig</p>
+            <div class="rating" aria-label="4 out of 5 stars">★★★★☆</div>
+            <div class="card-actions">
+              <button class="btn small view-btn">View details</button>
+              <button class="btn small add-btn">Add to cart</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="category" data-title="Where the Crawdads Sing" data-author="Delia Owens" data-cat="Fiction" role="listitem" tabindex="0">
+          <img src="assets/Where-the-Crawdads-Sing.jpg" alt="Where the Crawdads Sing cover">
+          <div class="card-body">
+            <h3>Where the Crawdads Sing</h3>
+            <p class="byline">By Delia Owens</p>
+            <div class="rating">★★★★☆</div>
+            <div class="card-actions">
+              <button class="btn small view-btn">View details</button>
+              <button class="btn small add-btn">Add to cart</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="category" data-title="Normal People" data-author="Sally Rooney" data-cat="Fiction" role="listitem" tabindex="0">
+          <img src="assets/normal-people.jpg" alt="Normal People cover">
+          <div class="card-body">
+            <h3>Normal People</h3>
+            <p class="byline">By Sally Rooney</p>
+            <div class="rating">★★★☆☆</div>
+            <div class="card-actions">
+              <button class="btn small view-btn">View details</button>
+              <button class="btn small add-btn">Add to cart</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Add the remaining fiction books similarly... -->
+      </div>
+    </section>
 
     <!-- NON-FICTION -->
-    <h2 class="section-title">Non-Fiction</h2>
-    <div class="category-grid">
-      <div class="category"><img src="assets/atomic-habits.jpg" alt="Book 7"><h3>Atomic Habits</h3><p>By James Clear</p></div>
-      <div class="category"><img src="assets/ikigai.jpg" alt="Book 8"><h3>Ikigai</h3><p>By Héctor García & Francesc Miralles</p></div>
-      <div class="category"><img src="assets/sapiens.jpg" alt="Book 9"><h3>Sapiens</h3><p>By Yuval Noah Harari</p></div>
-      <div class="category"><img src="assets/educated.jpg" alt="Book 10"><h3>Educated</h3><p>By Tara Westover</p></div>
-      <div class="category"><img src="assets/becoming.jpg" alt="Book 11"><h3>Becoming</h3><p>By Michelle Obama</p></div>
-      <div class="category"><img src="assets/the-body.jpg" alt="Book 12"><h3>The Body</h3><p>By Bill Bryson</p></div>
-    </div>
+    <section id="nonfiction" class="category-section" data-category="Non-Fiction">
+      <div class="section-header">
+        <h2 class="section-title">Non-Fiction</h2>
+        <div class="section-desc">History, memoirs, science and self-improvement.</div>
+      </div>
+
+      <div class="category-grid">
+        <article class="category" data-title="Atomic Habits" data-author="James Clear" data-cat="Non-Fiction" tabindex="0">
+          <img src="assets/atomic-habits.jpg" alt="Atomic Habits cover">
+          <div class="card-body">
+            <h3>Atomic Habits</h3>
+            <p class="byline">By James Clear</p>
+            <div class="rating">★★★★★</div>
+            <div class="card-actions">
+              <button class="btn small view-btn">View details</button>
+              <button class="btn small add-btn">Add to cart</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="category" data-title="Ikigai" data-author="Héctor García" data-cat="Non-Fiction" tabindex="0">
+          <img src="assets/ikigai.jpg" alt="Ikigai cover">
+          <div class="card-body">
+            <h3>Ikigai</h3>
+            <p class="byline">By Héctor García & Francesc Miralles</p>
+            <div class="rating">★★★★☆</div>
+            <div class="card-actions">
+              <button class="btn small view-btn">View details</button>
+              <button class="btn small add-btn">Add to cart</button>
+            </div>
+          </div>
+        </article>
+
+       
+<!--duplicated -->
+<article class="category" data-title="Ikigai" data-author="Héctor García" data-cat="Non-Fiction" tabindex="0">
+          <img src="assets/ikigai.jpg" alt="Ikigai cover">
+          <div class="card-body">
+            <h3>Ikigai</h3>
+            <p class="byline">By Héctor García & Francesc Miralles</p>
+            <div class="rating">★★★★☆</div>
+            <div class="card-actions">
+              <button class="btn small view-btn">View details</button>
+              <button class="btn small add-btn">Add to cart</button>
+            </div>
+          </div>
+        </article>
+ <!-- Add remaining non-fiction books... -->
+      </div>
+    </section>
 
     <!-- CHILDREN & YOUNG ADULTS -->
-    <h2 class="section-title">Children & Young Adults</h2>
-    <div class="category-grid">
-      <div class="category"><img src="assets/harrypotter.jpg" alt="Book 13"><h3>Harry Potter and the Sorcerer’s Stone</h3><p>By J.K. Rowling</p></div>
-      <div class="category"><img src="assets/hunger.jpg" alt="Book 14"><h3>The Hunger Games</h3><p>By Suzanne Collins</p></div>
-      <div class="category"><img src="assets/jacky.jpg" alt="Book 15"><h3>Percy Jackson & the Olympians</h3><p>By Rick Riordan</p></div>
-      <div class="category"><img src="assets/narnia.jpg" alt="Book 16"><h3>The Chronicles of Narnia</h3><p>By C.S. Lewis</p></div>
-      <div class="category"><img src="assets/anne.jpg" alt="Book 17"><h3>Anne of Green Gables</h3><p>By L.M. Montgomery</p></div>
-      <div class="category"><img src="assets/matilda.jpg" alt="Book 18"><h3>Matilda</h3><p>By Roald Dahl</p></div>
-    </div>
+    <section id="children" class="category-section" data-category="Children">
+      <div class="section-header">
+        <h2 class="section-title">Children & Young Adults</h2>
+        <div class="section-desc">Adventure and imagination for younger readers.</div>
+      </div>
+
+      <div class="category-grid">
+        <article class="category" data-title="Harry Potter and the Sorcerer’s Stone" data-author="J.K. Rowling" data-cat="Children" tabindex="0">
+          <img src="assets/harrypotter.jpg" alt="Harry Potter book cover">
+          <div class="card-body">
+            <h3>Harry Potter and the Sorcerer’s Stone</h3>
+            <p class="byline">By J.K. Rowling</p>
+            <div class="rating">★★★★★</div>
+            <div class="card-actions">
+              <button class="btn small view-btn">View details</button>
+              <button class="btn small add-btn">Add to cart</button>
+            </div>
+            <!-- duplicated-->
+             <div class="category-grid">
+        <article class="category" data-title="Harry Potter and the Sorcerer’s Stone" data-author="J.K. Rowling" data-cat="Children" tabindex="0">
+          <img src="assets/harrypotter.jpg" alt="Harry Potter book cover">
+          <div class="card-body">
+            <h3>Harry Potter and the Sorcerer’s Stone</h3>
+            <p class="byline">By J.K. Rowling</p>
+            <div class="rating">★★★★★</div>
+            <div class="card-actions">
+              <button class="btn small view-btn">View details</button>
+              <button class="btn small add-btn">Add to cart</button>
+            </div>
+            <div class="category-grid">
+        <article class="category" data-title="Harry Potter and the Sorcerer’s Stone" data-author="J.K. Rowling" data-cat="Children" tabindex="0">
+          <img src="assets/harrypotter.jpg" alt="Harry Potter book cover">
+          <div class="card-body">
+            <h3>Harry Potter and the Sorcerer’s Stone</h3>
+            <p class="byline">By J.K. Rowling</p>
+            <div class="rating">★★★★★</div>
+            <div class="card-actions">
+              <button class="btn small view-btn">View details</button>
+              <button class="btn small add-btn">Add to cart</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Add remaining children books... -->
+      </div>
+    </section>
 
     <!-- EDUCATION & ACADEMIC -->
-    <h2 class="section-title">Education & Academic</h2>
-    <div class="category-grid">
-      <div class="category"><img src="assets/biochem.jpg" alt="Book 19"><h3>Introduction to Biochemistry</h3><p>By Carol Higginbotham</p></div>
-      <div class="category"><img src="assets/physics.jpg" alt="Book 20"><h3>Physics Essentials</h3><p>By Cassian Rook</p></div>
-      <div class="category"><img src="assets/calculus.jpg" alt="Book 21"><h3>Calculus Made Easy</h3><p>By Silvanus P. Thompson</p></div>
-      <div class="category"><img src="assets/chem.jpg" alt="Book 22"><h3>Organic Chemistry Basics</h3><p>By Ananya Ganguly</p></div>
-      <div class="category"><img src="assets/anatomy.jpg" alt="Book 23"><h3>Human Anatomy</h3><p>By Selwyn Ardent</p></div>
-      <div class="category"><img src="assets/bio.jpg" alt="Book 24"><h3>Biology 101</h3><p>By Liora Duvall</p></div>
-    </div>
+    <section id="education" class="category-section" data-category="Education">
+      <div class="section-header">
+        <h2 class="section-title">Education & Academic</h2>
+        <div class="section-desc">Textbooks and revision guides for students.</div>
+      </div>
+
+      <div class="category-grid">
+        <article class="category" data-title="Calculus Made Easy" data-author="Silvanus P. Thompson" data-cat="Education" tabindex="0">
+          <img src="assets/calculus.jpg" alt="Calculus Made Easy cover">
+          <div class="card-body">
+            <h3>Calculus Made Easy</h3>
+            <p class="byline">By Silvanus P. Thompson</p>
+            <div class="rating">★★★★☆</div>
+            <div class="card-actions">
+              <button class="btn small view-btn">View details</button>
+              <button class="btn small add-btn">Add to cart</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
 
     <!-- LIFESTYLE & HOBBIES -->
-    <h2 class="section-title">Lifestyle & Hobbies</h2>
-    <div class="category-grid">
-      <div class="category"><img src="assets/baking.jpg" alt="Book 25"><h3>The Art of Baking</h3><p>By Caelen Frost</p></div>
-      <div class="category"><img src="assets/sketching.jpg" alt="Book 26"><h3>Sketching for Beginners</h3><p>By Peter Cronin</p></div>
-      <div class="category"><img src="assets/photo.jpg" alt="Book 27"><h3>Photography 101</h3><p>By David Thompson</p></div>
-      <div class="category"><img src="assets/gardening.jpg" alt="Book 28"><h3>Gardening Basics</h3><p>By Carmen Ellis</p></div>
-      <div class="category"><img src="assets/decor.jpg" alt="Book 29"><h3>Home Decor Tips</h3><p>By Emma Blomfield</p></div>
-      <div class="category"><img src="assets/fitness.jpg" alt="Book 30"><h3>Fitness & Wellness</h3><p>By Ellen M. Evans</p></div>
-    </div>
+    <section id="lifestyle" class="category-section" data-category="Lifestyle">
+      <div class="section-header">
+        <h2 class="section-title">Lifestyle & Hobbies</h2>
+        <div class="section-desc">Cooking, gardening, photography and hobbies.</div>
+      </div>
 
-  </section>
+      <div class="category-grid">
+        <article class="category" data-title="The Art of Baking" data-author="Caelen Frost" data-cat="Lifestyle" tabindex="0">
+          <img src="assets/baking.jpg" alt="The Art of Baking cover">
+          <div class="card-body">
+            <h3>The Art of Baking</h3>
+            <p class="byline">By Caelen Frost</p>
+            <div class="rating">★★★★☆</div>
+            <div class="card-actions">
+              <button class="btn small view-btn">View details</button>
+              <button class="btn small add-btn">Add to cart</button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="category-grid">
+        <article class="category" data-title="The Art of Baking" data-author="Caelen Frost" data-cat="Lifestyle" tabindex="0">
+          <img src="assets/baking.jpg" alt="The Art of Baking cover">
+          <div class="card-body">
+            <h3>The Art of Baking</h3>
+            <p class="byline">By Caelen Frost</p>
+            <div class="rating">★★★★☆</div>
+            <div class="card-actions">
+              <button class="btn small view-btn">View details</button>
+              <button class="btn small add-btn">Add to cart</button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="category-grid">
+        <article class="category" data-title="The Art of Baking" data-author="Caelen Frost" data-cat="Lifestyle" tabindex="0">
+          <img src="assets/baking.jpg" alt="The Art of Baking cover">
+          <div class="card-body">
+            <h3>The Art of Baking</h3>
+            <p class="byline">By Caelen Frost</p>
+            <div class="rating">★★★★☆</div>
+            <div class="card-actions">
+              <button class="btn small view-btn">View details</button>
+              <button class="btn small add-btn">Add to cart</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
 
   <!-- FOOTER -->
   <footer class="site-footer">
@@ -115,17 +337,150 @@
     </div>
   </footer>
 
+  <!-- BACK TO TOP -->
+  <button id="back-to-top" aria-label="Back to top">↑</button>
+
+  <!-- Light JS for search/filter/sort/theme/quick-nav/back-to-top & mobile menu -->
   <script>
-    const revealElements = document.querySelectorAll('.category, .section-title, .featured, .quote');
-    window.addEventListener('scroll', () => {
-      revealElements.forEach(el => {
-        const top = el.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        if(top < windowHeight - 100) {
-          el.classList.add('visible');
+    (function(){
+      /* --- DOM refs --- */
+      const searchInput = document.getElementById('search-input');
+      const filterSelect = document.getElementById('filter-select');
+      const sortSelect = document.getElementById('sort-select');
+      const cards = Array.from(document.querySelectorAll('.category'));
+      const backToTop = document.getElementById('back-to-top');
+      const themeToggle = document.getElementById('theme-toggle');
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mainNav = document.querySelector('.main-nav');
+
+      /* --- Utility: normalize text --- */
+      const normalize = s => s?.toString().toLowerCase().trim();
+
+      /* --- Search & Filter Function --- */
+      function refreshGrid() {
+        const query = normalize(searchInput.value);
+        const filter = filterSelect.value;
+        const sort = sortSelect.value;
+
+        // Filter and collect visible cards
+        let visible = cards.filter(card => {
+          const title = normalize(card.dataset.title || card.querySelector('h3')?.textContent);
+          const author = normalize(card.dataset.author || card.querySelector('.byline')?.textContent);
+          const cat = card.dataset.cat || card.closest('.category-section')?.dataset.category || '';
+          const matchesQuery = !query || title.includes(query) || author.includes(query);
+          const matchesFilter = filter === 'all' || (cat && cat === filter);
+          return matchesQuery && matchesFilter;
+        });
+
+        // Sorting
+        if(sort !== 'default') {
+          const [key, dir] = sort.split('-'); // title-asc etc.
+          visible.sort((a,b) => {
+            const aVal = normalize(key === 'title' ? (a.dataset.title||a.querySelector('h3')?.textContent) : (a.dataset.author||a.dataset.author||a.querySelector('.byline')?.textContent));
+            const bVal = normalize(key === 'title' ? (b.dataset.title||b.querySelector('h3')?.textContent) : (b.dataset.author||b.querySelector('.byline')?.textContent));
+            if(!aVal && !bVal) return 0;
+            if(!aVal) return 1;
+            if(!bVal) return -1;
+            return dir === 'asc' ? aVal.localeCompare(bVal) : bVal.localeCompare(aVal);
+          });
         }
+
+        // Hide all, then re-append visible in their parent container order
+        cards.forEach(c => c.classList.add('hidden-card'));
+        // group by section to keep sections intact
+        const sections = {};
+        visible.forEach(c => {
+          const sec = c.closest('.category-section');
+          if(!sections[sec.id]) sections[sec.id] = [];
+          sections[sec.id].push(c);
+        });
+
+        // For each section, append visible items back into the grid in order
+        Object.keys(sections).forEach(secId => {
+          const grid = document.querySelector(`#${secId} .category-grid`);
+          // if grid exists, clear then append
+          if(grid) {
+            // first hide all children, then append visible at top
+            sections[secId].forEach(c => {
+              c.classList.remove('hidden-card');
+              grid.appendChild(c);
+            });
+          }
+        });
+      }
+
+      /* --- Event listeners --- */
+      searchInput.addEventListener('input', () => refreshGrid());
+      filterSelect.addEventListener('change', () => refreshGrid());
+      sortSelect.addEventListener('change', () => refreshGrid());
+
+      /* --- Back to top --- */
+      window.addEventListener('scroll', () => {
+        if(window.scrollY > 400) backToTop.classList.add('show');
+        else backToTop.classList.remove('show');
       });
-    });
+      backToTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+      /* --- Smooth quick-nav links --- */
+      document.querySelectorAll('.quick-nav a, .main-nav a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+          const href = a.getAttribute('href');
+          if(!href || !href.startsWith('#')) return;
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
+        });
+      });
+
+      /* --- View details placeholder --- */
+      document.querySelectorAll('.view-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const card = e.target.closest('.category');
+          const title = card.dataset.title || card.querySelector('h3').textContent;
+          alert('View details — ' + title + '\\n(Implement product page or modal for more info.)');
+        });
+      });
+
+      /* --- Add to cart placeholder --- */
+      document.querySelectorAll('.add-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const card = e.target.closest('.category');
+          const title = card.dataset.title || card.querySelector('h3').textContent;
+          btn.textContent = 'Added ✓';
+          btn.disabled = true;
+          setTimeout(() => { btn.textContent = 'Add to cart'; btn.disabled = false; }, 1200);
+        });
+      });
+
+      /* --- Mobile menu toggle --- */
+      mobileMenuBtn.addEventListener('click', () => {
+        const expanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+        mobileMenuBtn.setAttribute('aria-expanded', String(!expanded));
+        mainNav.classList.toggle('open');
+      });
+
+      /* --- Dark / Light theme toggle (persist) --- */
+      const root = document.documentElement;
+      const saved = localStorage.getItem('bs-theme');
+      if(saved === 'dark') root.classList.add('dark');
+      themeToggle.addEventListener('click', () => {
+        const isDark = root.classList.toggle('dark');
+        themeToggle.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('bs-theme', isDark ? 'dark' : 'light');
+      });
+
+      /* --- Reveal on scroll --- */
+      const revealElems = document.querySelectorAll('.category, .section-title, .section-header');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      }, {threshold: 0.12});
+      revealElems.forEach(el => observer.observe(el));
+
+      /* --- Initial run --- */
+      refreshGrid();
+    })();
   </script>
 </body>
 </html>
