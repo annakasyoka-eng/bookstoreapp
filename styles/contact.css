@@ -294,7 +294,7 @@ a {
    FOOTER
 ------------------------------ */
 .site-footer {
-  background: #f0e7de;
+  background: #5c544e;
   color: var(--color-text);
   margin-top: 4rem;
   padding-top: 2rem;
@@ -327,7 +327,7 @@ a {
 .footer-trust .badge {
   display: inline-block;
   background: var(--color-accent);
-  color: #fff;
+  color: #d6b9b9;
   padding: 0.3rem 0.7rem;
   border-radius: var(--radius);
   margin-right: 0.5rem;
