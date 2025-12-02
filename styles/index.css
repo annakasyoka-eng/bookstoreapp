@@ -108,6 +108,24 @@ nav a:hover::after {
   animation: fadeIn 1.5s ease;
 }
 
+.explore {
+  border: 2px solid #fff;
+  background: #d77858;
+  color: #fff;
+  font-weight: 600;
+  padding: 14px 34px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  margin-top: 20px;
+}
+
+.explore:hover {
+  background-color: chocolate;
+  border-color: chocolate;
+  transform: translateY(-3px);
+}
+
 .explore-btn {
   border: 2px solid #fff;
   background: transparent;
